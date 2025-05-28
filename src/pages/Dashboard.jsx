@@ -1,6 +1,7 @@
 import React from "react";
 import SymptomTracker from "../components/SymptomsTracker";
 import MedicationManager from "../components/MedicationManagement";
+import AppointmentScheduler from "../components/AppointmentScheduler";
 
 function Dashboard(){
  return(
@@ -9,6 +10,7 @@ function Dashboard(){
         <div>
             <SymptomTracker/>
             <MedicationManager />
+            <AppointmentScheduler/>
         </div>
     </div>
  );
