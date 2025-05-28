@@ -1,0 +1,156 @@
+/* Login.css */
+
+.wrapper {
+    background-image: url('/images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container2 {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    max-width: 1000px;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .leftPanel,
+  .rightPanel {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .rightPanel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: white;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  .button:hover {
+    box-Shadow: 0 0 15px #0056b3
+  }
+  .button.signup {
+    background-color: #28a745;
+  }
+  .button.signup:hover {
+    box-Shadow: 0 0 15px #1e7e34
+  }
+  
+  /* Responsive Breakpoints */
+  @media (max-width: 1024px) {
+    .container2 {
+      flex-direction: column;
+      height: auto;
+    }
+    .description{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .rightPanel img {
+      height: 700px;
+      border-radius: 10px;
+      object-fit: cover;
+      width: 95%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .leftPanel {
+      padding: 10px;
+    }
+    .rightPanel img {
+        height: 400px;
+        
+      }
+      .description {
+        font-size: 15px;
+        margin-bottom: 30px;
+        color: white;
+      }
+  }
+  
+  @media (max-width: 425px) {
+    .title {
+      font-size: 1rem;
+    }
+  
+    .description {
+      font-size: 0.7rem;
+    }
+    .rightPanel img {
+        height: 300px;
+        margin-bottom: -30px;
+      }
+  }
+  
+  @media (max-width: 375px) {
+    .title {
+      font-size: 1rem;
+    }
+  
+    .description {
+      font-size: 0.7rem;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .title {
+      font-size: 1.1rem;
+    }
+  
+    .description {
+      font-size: 0.8rem;
+    }
+  
+    .button {
+      font-size: 0.9rem;
+    }
+    .rightPanel img {
+        margin-top: -20px;
+      }
+  }
+  
