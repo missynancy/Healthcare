@@ -1,5 +1,6 @@
 import React from "react";
 import SymptomTracker from "../components/SymptomsTracker";
+import MedicationManager from "../components/MedicationManagement";
 
 function Dashboard(){
  return(
@@ -7,6 +8,7 @@ function Dashboard(){
         <h1>ChronicCare Dashboard</h1>
         <div>
             <SymptomTracker/>
+            <MedicationManager />
         </div>
     </div>
  );
