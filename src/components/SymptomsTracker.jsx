@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SymptomTracker() {
   const [symptom, setSymptom] = useState('');
   const [severity, setSeverity] = useState(5);
-  const [history, setHistory] = useState([]);
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const saveSymptomToBackend = async (symptomEntry) => {
     return new Promise((resolve) => {
@@ -33,6 +34,7 @@ function SymptomTracker() {
         return;
       }
 
+      // Optionally, show a message briefly before redirect
       if (symptomEntry.severity >= 7) {
         setMessage(
           'Symptom logged. Since severity is high, consider contacting your healthcare provider.'
@@ -40,11 +42,16 @@ function SymptomTracker() {
       } else {
         setMessage('Symptom logged successfully.');
       }
-      setTimeout(() => setMessage(''), 4000);
 
-      setHistory((prev) => [symptomEntry, ...prev]);
+      // Clear inputs
       setSymptom('');
       setSeverity(5);
+
+      // Redirect to symptom history page after short delay
+      setTimeout(() => {
+        navigate('/symptom-history'); // <-- change this to your route
+      }, 1000); // 1 second delay to show message
+
     } catch (error) {
       setMessage('An error occurred. Please try again.');
       setTimeout(() => setMessage(''), 4000);
@@ -93,28 +100,6 @@ function SymptomTracker() {
       </button>
 
       {message && <p style={{ marginTop: 15, fontWeight: 'bold' }}>{message}</p>}
-
-      {history.length > 0 && (
-        <div style={{ marginTop: 30 }}>
-          <h3>Symptom History</h3>
-          <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
-            {history.map(({ symptom, severity, date }, idx) => (
-              <li
-                key={idx}
-                style={{
-                  backgroundColor: '#f1f1f1',
-                  marginBottom: 10,
-                  padding: 10,
-                  borderRadius: 6,
-                }}
-              >
-                <strong>{symptom}</strong> — Severity: {severity} <br />
-                <small>{new Date(date).toLocaleString()}</small>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
 }
