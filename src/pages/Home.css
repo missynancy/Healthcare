@@ -1,4 +1,11 @@
 /* Login.css */
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
 
 .wrapper {
     background-image: url('/images/bg.jpg');
@@ -14,9 +21,8 @@
   .container2 {
     display: flex;
     flex-direction: row;
-    width: 80%;
-    max-width: 1000px;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -103,6 +109,60 @@
     box-shadow: 0 2px 15px rgba(0,0,0,0.3);
     /* No need for margin, flexbox centers it */
   }
+  /* Home Services Section */
+.home-services {
+  padding: 10px;
+  background-color: #f9fafb;
+  text-align: center;
+  width: 80%;
+}
+
+.home-services h2 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 40px;
+}
+
+.home-services-cont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Individual Service Card */
+.home-services-cont-1 {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+  width: 20%;
+  max-width: 300px;
+  transition: transform 0.2s ease-in-out;
+  text-align: left;
+}
+
+.home-services-cont-1:hover {
+  transform: translateY(-5px);
+  background-color: green;
+  color: white;
+}
+.home-services-cont-1:hover p,h3{
+  color: white;
+}
+.home-services-cont-1 h3 {
+  font-size: 1.25rem;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.home-services-cont-1 p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
   
   /* Responsive Breakpoints */
   @media (max-width: 1024px) {

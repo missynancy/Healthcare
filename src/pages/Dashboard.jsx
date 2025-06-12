@@ -3,6 +3,7 @@ import SymptomTracker from "../components/SymptomsTracker";
 import MedicationManager from "../components/MedicationManagement";
 import AppointmentScheduler from "../components/AppointmentScheduler";
 import HealthTips from "../components/HealthTips";
+import ShareData from "../components/ShareData";
 
 function Dashboard(){
  return(
@@ -13,6 +14,7 @@ function Dashboard(){
             <MedicationManager />
             <AppointmentScheduler/>
             <HealthTips/>
+            <ShareData/>
         </div>
     </div>
  );
